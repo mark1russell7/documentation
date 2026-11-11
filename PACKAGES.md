@@ -7,7 +7,7 @@
 > registry (do not trust any hard count here). The **bundle-dev contents** description is also
 > stale (see [AUDIT-2026-07.md](./AUDIT-2026-07.md)). The 10 manifest packages that previously had
 > no entry (client-logger, client-collections, client-node, client-vite, client-server-mongo,
-> server-mongo, minimongo, client-playground, scaffold, documentation) are now listed under
+> server-mongo, data-layer UI (private), client-playground, scaffold, documentation) are now listed under
 > [Previously Undocumented Packages](#previously-undocumented-packages-july-2026).
 
 ## Table of Contents
@@ -29,7 +29,7 @@
 The ecosystem targets a **single Node.js baseline: Node.js >= 20** (with **npm >= 10**, and
 **pnpm** as the prescribed package manager). This matches the `engines` field already declared by
 the core `@mark1russell7/client` runtime that every package depends on, as well as `docker/*`,
-`minimongo`, `client-mongo`, `client-server`, and `server-mongo`.
+the private data-layer UI of the owner, `client-mongo`, `client-server`, and `server-mongo`.
 
 Three packages currently declare a higher floor (`cue`, `splay`, `client-splay` at `node >=25` /
 `npm >=11`) and ~38 declare no `engines` field at all; both are treated as drift to be reconciled
@@ -671,15 +671,15 @@ flagged as dead code in the audit.
 
 ---
 
-### @mark1russell7/minimongo
+### Data-layer UI (private)
 
 **Browser-based MongoDB data explorer / UI app.**
 
 | Property | Value |
 |----------|-------|
-| Repository | [github.com/mark1russell7/MiniMongo](https://github.com/mark1russell7/MiniMongo) |
-| Path | `~/git/MiniMongo` |
-| Note | Manifest key is `@mark1russell7/minimongo` but package.json `name` is unscoped `minimongo` — identity mismatch, see BUGS-2026-07 **M41** |
+| Repository | Private repository of the owner (not public) |
+| Path | Not public |
+| Note | Manifest key is scoped but package.json `name` is unscoped — identity mismatch, see BUGS-2026-07 **M41** |
 
 ---
 
